@@ -3,6 +3,7 @@ import '@fontsource-variable/plus-jakarta-sans';
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 
+import { AppProviders } from '@/components/shared/providers';
 import { siteConfig } from '@/config/site';
 
 import './globals.css';
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  themeColor: '#faf8f5',
+  themeColor: '#f7f4ef',
 };
 
 export default function RootLayout({
@@ -36,7 +37,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        {children}
+        <AppProviders>{children}</AppProviders>
       </body>
     </html>
   );

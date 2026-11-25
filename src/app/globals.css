@@ -1,16 +1,30 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-obsidian: #111111;
-  --color-ivory: #faf8f5;
-  --color-alabaster: #f2ede6;
-  --color-champagne: #c5a880;
-  --color-taupe: #6e655c;
-  --color-charcoal: #2a2826;
-  --color-border-subtle: #e5dfd5;
+  /* Core LŪMÉ Brand Palette */
+  --color-ivory: #f7f4ef;
+  --color-champagne: #e7ded2;
+  --color-taupe: #a18a73;
+  --color-espresso: #29251f;
+  --color-obsidian: #171717;
 
+  /* Supporting Surfaces & Semantic Neutrals */
+  --color-alabaster: #fcfbf8;
+  --color-charcoal: #474139;
+  --color-border-subtle: #e3dcd2;
+  --color-border-strong: #c9beb0;
+
+  /* Muted Quiet-Luxury Status Accents */
+  --color-sage: #3b5249;
+  --color-ochre: #8c6239;
+  --color-burgundy: #7a2e2e;
+
+  /* Typography */
   --font-display: 'Cormorant Garamond Variable', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans Variable', system-ui, -apple-system, sans-serif;
+
+  /* Spacing & Layout Tokens */
+  --container-max: 90rem;
 }
 
 @layer base {
@@ -20,12 +34,16 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
   }
 
   body {
     min-height: 100dvh;
     background-color: var(--color-ivory);
     color: var(--color-obsidian);
+    font-feature-settings:
+      'kern' 1,
+      'liga' 1;
   }
 
   ::selection {
@@ -34,8 +52,8 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-obsidian);
-    outline-offset: 2px;
+    outline: 1.5px solid var(--color-obsidian);
+    outline-offset: 3px;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -47,5 +65,16 @@
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
+  }
+}
+
+@layer utilities {
+  .font-editorial {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
   }
 }
