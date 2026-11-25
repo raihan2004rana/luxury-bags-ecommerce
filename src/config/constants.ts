@@ -1,0 +1,14 @@
+export const API_DEFAULTS = {
+  DEFAULT_PAGE: 1,
+  DEFAULT_PAGE_SIZE: 12,
+  MAX_PAGE_SIZE: 50,
+  REQUEST_ID_HEADER: 'x-request-id',
+} as const;
+
+export const DATABASE_DEFAULTS = {
+  DEFAULT_DB_NAME: 'lume_ecommerce',
+  MAX_POOL_SIZE: 10,
+  MIN_POOL_SIZE: 1,
+  SERVER_SELECTION_TIMEOUT_MS: 5_000,
+  CONNECT_TIMEOUT_MS: 10_000,
+} as const;
